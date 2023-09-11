@@ -1,4 +1,4 @@
-IMAGE_NAME="vllm_image"
+IMAGE_NAME="vllm_alroy"
 CONTAINER_NAME="vllm_container"
 
 docker build \
@@ -7,4 +7,5 @@ docker build \
     --progress=plain \
     .
 
-docker run --name $CONTAINER_NAME -p 8000:8000 $IMAGE_NAME:latest
+docker run -p 8000:8000 --name $CONTAINER_NAME $IMAGE_NAME:latest
+

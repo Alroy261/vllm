@@ -9,9 +9,8 @@ RUN apt update && \
 
 RUN pip install vllm
 
-# TODO: revert to main if everything is working properly
-RUN git clone -b dev-alroy https://github.com/Alroy261/vllm.git
+ADD ./vllm/entrypoints/api_server.py .
 
 EXPOSE 8000
 
-ENTRYPOINT ["python3", "-m", "vllm.entrypoints.api_server"]
+ENTRYPOINT ["python3", "api_server.py"]
